@@ -27,6 +27,8 @@ namespace estate
             try
             {
 
+                //NonSerializedAttribute datasource required
+
                 string cs = ConfigurationManager.ConnectionStrings["propertyConnectionString"].ConnectionString;
                 conn = new System.Data.SqlClient.SqlConnection();
                 conn.ConnectionString = cs;
