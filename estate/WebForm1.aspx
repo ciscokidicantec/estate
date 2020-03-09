@@ -24,7 +24,21 @@
             <asp:GridView ID="GridView3" runat="server">
             </asp:GridView>
             <br />
+            <asp:GridView ID="GridView4" runat="server" AutoGenerateColumns="False" DataKeyNames="userid" DataSourceID="SqlDataSource2">
+                <Columns>
+                    <asp:BoundField DataField="userid" HeaderText="userid" ReadOnly="True" SortExpression="userid" />
+                    <asp:BoundField DataField="estateid" HeaderText="estateid" SortExpression="estateid" />
+                    <asp:BoundField DataField="vendorfirstname" HeaderText="vendorfirstname" SortExpression="vendorfirstname" />
+                    <asp:BoundField DataField="vendorlastname" HeaderText="vendorlastname" SortExpression="vendorlastname" />
+                    <asp:BoundField DataField="vendoremail" HeaderText="vendoremail" SortExpression="vendoremail" />
+                    <asp:BoundField DataField="vendorstatus" HeaderText="vendorstatus" SortExpression="vendorstatus" />
+                    <asp:BoundField DataField="vendorfirstlineaddress" HeaderText="vendorfirstlineaddress" SortExpression="vendorfirstlineaddress" />
+                    <asp:BoundField DataField="vendoraddressname" HeaderText="vendoraddressname" SortExpression="vendoraddressname" />
+                    <asp:BoundField DataField="vendoraddressnumber" HeaderText="vendoraddressnumber" SortExpression="vendoraddressnumber" />
+                </Columns>
+            </asp:GridView>
             <br />
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:propertyConnectionString %>" SelectCommand="SELECT * FROM [vendors]"></asp:SqlDataSource>
             <br />
             <br />
             <br />
