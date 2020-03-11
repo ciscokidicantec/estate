@@ -34,7 +34,10 @@ namespace estate
                 conn.ConnectionString = cs;
 
                 string cmdtext = "SELECT * FROM [table];";
-                inscommand = new System.Data.SqlClient.SqlCommand(cmdtext, conn);
+                //inscommand = new System.Data.SqlClient.SqlCommand(cmdtext, conn);
+                inscommand = new SqlCommand(cmdtext, conn);
+
+
                 conn.Open();
 
                 SqlDataReader reader = inscommand.ExecuteReader();
@@ -51,7 +54,9 @@ namespace estate
 
 
                 string cmdtexttop = "SELECT estateid FROM [table];";
-                inscommandtop = new System.Data.SqlClient.SqlCommand(cmdtexttop, conntop);
+                //inscommandtop = new System.Data.SqlClient.SqlCommand(cmdtexttop, conntop);
+                inscommandtop = new SqlCommand(cmdtexttop, conntop);
+
                 conntop.Open();
 
                 GridView2.DataSource = inscommandtop.ExecuteReader();
@@ -99,12 +104,17 @@ namespace estate
             {
 
                 string cs = ConfigurationManager.ConnectionStrings["propertyConnectionString"].ConnectionString;
-            conn = new System.Data.SqlClient.SqlConnection();
-            conn.ConnectionString = cs;
+                //conn = new System.Data.SqlClient.SqlConnection();
+                conn = new SqlConnection();
+
+                conn.ConnectionString = cs;
 
             string cmdtext = "SELECT * FROM [vendors];";
-            inscommand = new System.Data.SqlClient.SqlCommand(cmdtext, conn);
-            conn.Open();
+            //inscommand = new System.Data.SqlClient.SqlCommand(cmdtext, conn);
+            inscommand = new SqlCommand(cmdtext, conn);
+
+
+                conn.Open();
 
             SqlDataReader reader = inscommand.ExecuteReader();
             while (reader.Read())
@@ -120,8 +130,10 @@ namespace estate
 
 
             string cmdtexttop = "SELECT vendorlastname FROM [vendors];";
-            inscommandtop = new System.Data.SqlClient.SqlCommand(cmdtexttop, conntop);
-            conntop.Open();
+//            inscommandtop = new System.Data.SqlClient.SqlCommand(cmdtexttop, conntop);
+            inscommandtop = new SqlCommand(cmdtexttop, conntop);
+
+                conntop.Open();
 
             GridView3.DataSource = inscommandtop.ExecuteReader();
             GridView3.DataBind();
