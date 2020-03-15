@@ -33,7 +33,7 @@ namespace estate
                 conn = new System.Data.SqlClient.SqlConnection();
                 conn.ConnectionString = cs;
 
-                string cmdtext = "SELECT * FROM [table];";
+                string cmdtext = "SELECT * FROM [estate];";
                 //inscommand = new System.Data.SqlClient.SqlCommand(cmdtext, conn);
                 inscommand = new SqlCommand(cmdtext, conn);
 
@@ -53,7 +53,7 @@ namespace estate
                 //conntop.ConnectionString = cs;
 
 
-                string cmdtexttop = "SELECT estateid FROM [table];";
+                string cmdtexttop = "SELECT estateid FROM [estate];";
                 //inscommandtop = new System.Data.SqlClient.SqlCommand(cmdtexttop, conntop);
                 inscommandtop = new SqlCommand(cmdtexttop, conntop);
 
