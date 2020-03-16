@@ -114,27 +114,26 @@ namespace estate
 
                 conn.Open();
 
-            SqlDataReader reader = inscommand.ExecuteReader();
-            while (reader.Read())
-            {
+                SqlDataReader reader = inscommand.ExecuteReader();
+                while (reader.Read())
+                {
                     lastname = (string)reader["vendorlastname"];
-            }
-            inscommand.Dispose();
-            conn.Close();
-            conn.Dispose();
+                }
+                inscommand.Dispose();
+                conn.Close();
+                conn.Dispose();
 
-            conntop = new System.Data.SqlClient.SqlConnection(cs);
-            //conntop.ConnectionString = cs;
+                conntop = new System.Data.SqlClient.SqlConnection(cs);
+                //conntop.ConnectionString = cs;
 
 
-            string cmdtexttop = "SELECT vendorlastname FROM [vendors];";
-//            inscommandtop = new System.Data.SqlClient.SqlCommand(cmdtexttop, conntop);
-            inscommandtop = new SqlCommand(cmdtexttop, conntop);
+                string cmdtexttop = "SELECT vendorlastname FROM [vendors];";
+                inscommandtop = new SqlCommand(cmdtexttop, conntop);
 
                 conntop.Open();
 
-            GridView3.DataSource = inscommandtop.ExecuteReader();
-            GridView3.DataBind();
+                GridView3.DataSource = inscommandtop.ExecuteReader();
+                GridView3.DataBind();
 
             // inscommandtop.Dispose();
             // conntop.Close();
