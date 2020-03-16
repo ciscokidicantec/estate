@@ -109,10 +109,8 @@ namespace estate
 
                 conn.ConnectionString = cs;
 
-            string cmdtext = "SELECT * FROM [vendors];";
-            //inscommand = new System.Data.SqlClient.SqlCommand(cmdtext, conn);
-            inscommand = new SqlCommand(cmdtext, conn);
-
+                string cmdtext = "SELECT * FROM [vendors];";
+                inscommand = new SqlCommand(cmdtext, conn);
 
                 conn.Open();
 
