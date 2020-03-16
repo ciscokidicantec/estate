@@ -29,7 +29,7 @@ namespace estate
 
                 //NonSerializedAttribute datasource required
 
-                string cs = ConfigurationManager.ConnectionStrings["propertyConnectionString"].ConnectionString;
+                string cs = ConfigurationManager.ConnectionStrings["gitpropertyConnectionString"].ConnectionString;
                 conn = new System.Data.SqlClient.SqlConnection();
                 conn.ConnectionString = cs;
 
@@ -103,7 +103,7 @@ namespace estate
             try
             {
 
-                string cs = ConfigurationManager.ConnectionStrings["propertyConnectionString"].ConnectionString;
+                string cs = ConfigurationManager.ConnectionStrings["gitpropertyConnectionString"].ConnectionString;
                 //conn = new System.Data.SqlClient.SqlConnection();
                 conn = new SqlConnection();
 

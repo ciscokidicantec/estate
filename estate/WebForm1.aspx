@@ -9,8 +9,13 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1"></asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:propertyConnectionString %>" SelectCommand="SELECT * FROM [estate]"></asp:SqlDataSource>
+            <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" AutoGenerateColumns="False" DataKeyNames="estateid">
+                <Columns>
+                    <asp:BoundField DataField="estateid" HeaderText="estateid" ReadOnly="True" SortExpression="estateid" />
+                    <asp:BoundField DataField="postcode" HeaderText="postcode" SortExpression="postcode" />
+                </Columns>
+            </asp:GridView>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:gitpropertyConnectionString %>" SelectCommand="SELECT * FROM [estate]"></asp:SqlDataSource>
             <br />
             <br />
             <asp:GridView ID="GridView2" runat="server">
@@ -38,7 +43,7 @@
                 </Columns>
             </asp:GridView>
             <br />
-            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:propertyConnectionString %>" SelectCommand="SELECT * FROM [vendors]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:gitpropertyConnectionString %>" SelectCommand="SELECT * FROM [vendors]"></asp:SqlDataSource>
             <br />
             <br />
             <br />
