@@ -19,7 +19,6 @@ namespace estate
 
             SqlCommand inscommand;
             SqlConnection conn;
-
             SqlCommand inscommandtop;
             SqlConnection conntop;
             int myid;
